@@ -19,19 +19,19 @@ export default function TemperatureNow() {
             </section>
 
             <section className="statistics-temperature-now">
-                <BoxStatistics
+                <StatisticTemperatureNow
                     img={wind}
                     imgAlt="Ilustração vento"
                     title="Vento"
                     data="17 km/h"
                 />
-                <BoxStatistics
+                <StatisticTemperatureNow
                     img={humidity}
                     imgAlt="Ilustração umidade"
                     title="Umidade"
                     data="31%"
                 />
-                <BoxStatistics
+                <StatisticTemperatureNow
                     img={cloudsWithRain}
                     imgAlt="Ilustração Chuva"
                     title="Chuva"
@@ -42,7 +42,7 @@ export default function TemperatureNow() {
     );
 }
 
-function BoxStatistics({ img, imgAlt, title, data }) {
+function StatisticTemperatureNow({ img, imgAlt, title, data }) {
     return (
         <div className="box-statistics">
             <img src={img} alt={imgAlt} />
