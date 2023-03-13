@@ -6,7 +6,7 @@ export default function AirQuality() {
         <article className="box-weather air-quality">
             <section>
                 <img src={leaf} alt="Ilustração folha" />
-                <h2 className="title-air-quality">Qualidade do ar</h2>
+                <h2 className="title-box-weather">Qualidade do ar</h2>
             </section>
 
             <section>
