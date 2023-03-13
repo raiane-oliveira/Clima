@@ -15,7 +15,7 @@ export default function TemperatureNow() {
             <section className="temperature-temperature-now">
                 <h1 className="title-temperature">18°C</h1>
                 <span>22°</span>
-                <span>16°</span>
+                <span className="second-degrees-temperature-now">16°</span>
             </section>
 
             <section className="statistics-temperature-now">
