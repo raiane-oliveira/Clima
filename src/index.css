@@ -19,5 +19,8 @@ body {
 }
 
 #root {
-    height: 100%;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background: url(assets/background-blur.png) no-repeat center / 120% 120%;
 }

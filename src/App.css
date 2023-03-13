@@ -1,0 +1,59 @@
+.App {
+    display: grid;
+    grid-template-columns: 2.85fr 1fr 1fr;
+    grid-template-rows: 24.4rem 21.2rem;
+    grid-template-areas:
+        "temperature air sunTime"
+        "temperature week week";
+    gap: 2.4rem 3.2rem;
+}
+
+.box-weather {
+    padding: 1.6rem;
+    border-radius: 1rem;
+    background-color: var(--bg-purple);
+}
+
+/* Temperature now section */
+.temperature-now {
+    grid-area: temperature;
+    display: grid;
+}
+
+.location-temperature-now {
+    justify-self: end;
+    display: flex;
+    align-items: start;
+    gap: 0.4rem;
+    padding: 1.6rem 1.6rem 0 0;
+}
+
+.location-temperature-now p {
+    color: var(--more-light-purple);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.temperature-temperature-now {
+    justify-self: center;
+    text-align: center;
+    margin-top: 6rem;
+    color: white;
+}
+
+.title-temperature {
+    display: flex;
+    font-size: 8.8rem;
+    font-weight: 700;
+    line-height: 10.56rem;
+}
+
+.degrees-title-temperature {
+    font-size: 2.4rem;
+    line-height: 5.88rem;
+    color: var(--text-purple);
+}
+
+.week-weather {
+    grid-area: week;
+}
