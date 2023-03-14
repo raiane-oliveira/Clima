@@ -1,13 +1,14 @@
 .App {
     display: grid;
     grid-template-columns: 48rem repeat(2, 27.7rem);
-    grid-template-rows: max-content 21.2rem;
     grid-template-areas:
         "temperature air sunTime"
         "temperature week week";
     gap: 2.4rem 3.2rem;
+    padding: 4rem;
 }
 
+/* All sections */
 .box-weather {
     padding: 1.6rem;
     border-radius: 1rem;
@@ -65,7 +66,7 @@
     height: 17rem;
 
     position: absolute;
-    left: -5.6rem;
+    left: -3.6rem;
     top: -5.6rem;
 
     background: url(assets/clouds.svg) no-repeat center;
@@ -102,8 +103,10 @@
 }
 
 .statistics-temperature-now {
+    flex-wrap: wrap;
     align-items: end;
     gap: 0.8rem;
+    margin-top: 2.5rem;
 }
 
 .box-statistics {
@@ -143,6 +146,10 @@
 }
 
 /* Air quality section */
+.air-quality {
+    grid-area: air;
+}
+
 .air-quality,
 .sun-time {
     display: grid;
@@ -189,6 +196,10 @@
 }
 
 /* Sun time section */
+.sun-time {
+    grid-area: sunTime;
+}
+
 .sun-time .title-container-box-weather {
     margin-bottom: auto;
 }
@@ -198,15 +209,16 @@
     padding: 4rem;
     grid-area: week;
 
+    flex-wrap: wrap;
     align-items: center;
     gap: 3.8rem;
 }
 
 .day-week-weather {
+    flex: 1 0 auto;
     display: grid;
     justify-items: center;
     gap: 1.6rem;
-    /* padding: 0 1.3rem; */
 }
 
 .title-day-week-weather {
@@ -219,4 +231,51 @@
 .week-weather img {
     width: 6.4rem;
     height: 6.4rem;
+}
+
+/* Media Queries */
+@media (max-width: 1250px) {
+    .App {
+        grid-template-columns: auto;
+        grid-template-rows: max-content;
+        grid-template-areas:
+            "temperature temperature"
+            "air  sunTime"
+            "week week";
+    }
+}
+
+@media (max-width: 675px) {
+    #root {
+        place-content: initial;
+        height: 100%;
+    }
+    .App {
+        padding: 3rem 2.5rem;
+        grid-template-areas:
+            "temperature"
+            "air"
+            "sunTime"
+            "week";
+    }
+    .title-temperature {
+        font-size: 6.6rem;
+    }
+
+    .degrees-title-temperature {
+        font-size: 1.4rem;
+    }
+
+    .location-temperature-now::before {
+        content: "";
+        display: block;
+        width: 14rem;
+        height: 14rem;
+
+        position: absolute;
+        left: -2.6rem;
+        top: -4.6rem;
+
+        background: url(assets/clouds.svg) no-repeat center / cover;
+    }
 }
