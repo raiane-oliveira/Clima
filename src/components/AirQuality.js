@@ -4,12 +4,12 @@ import leaf from "../assets/leaf.svg";
 export default function AirQuality() {
     return (
         <article className="box-weather air-quality">
-            <section>
+            <section className="title-container-box-weather">
                 <img src={leaf} alt="Ilustração folha" />
                 <h2 className="title-box-weather">Qualidade do ar</h2>
             </section>
 
-            <section>
+            <section className="qualities-container-air-quality">
                 <span className="quality-air-quality">Boa</span>
                 <h3 className="quality-number-air-quality">21</h3>
             </section>

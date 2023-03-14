@@ -18,6 +18,11 @@ body {
     font-size: 1.6rem;
 }
 
+/* Makes images responsive */
+img {
+    max-width: 100%;
+}
+
 #root {
     display: grid;
     place-content: center;

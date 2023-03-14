@@ -1,7 +1,7 @@
 .App {
     display: grid;
     grid-template-columns: 48rem repeat(2, 27.7rem);
-    grid-template-rows: 24.4rem 21.2rem;
+    grid-template-rows: max-content 21.2rem;
     grid-template-areas:
         "temperature air sunTime"
         "temperature week week";
@@ -12,6 +12,21 @@
     padding: 1.6rem;
     border-radius: 1rem;
     background-color: var(--bg-purple);
+}
+
+.title-container-box-weather {
+    display: grid;
+    grid-template-columns: 2.4rem auto;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 1.6rem;
+}
+
+.title-box-weather {
+    color: var(--text-purple);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.92rem;
 }
 
 /* Temperature now section */
@@ -101,7 +116,6 @@
 }
 
 .box-statistics img {
-    max-width: 100%;
     grid-row: 1 / 3;
 }
 
@@ -122,6 +136,51 @@
     color: var(--text-purple);
     font-size: 1.4rem;
     margin-left: 0.4rem;
+}
+
+/* Air quality section */
+.air-quality {
+    display: grid;
+    justify-items: center;
+    gap: 3.2rem;
+}
+
+.qualities-container-air-quality {
+    text-align: center;
+}
+
+.quality-air-quality {
+    color: var(--text-green);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.16rem;
+}
+
+.quality-number-air-quality {
+    margin-top: 0.4rem;
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 4.8rem;
+    color: var(--light-purple);
+}
+
+.statistics-air-quality {
+    text-align: center;
+    gap: 1.6rem;
+}
+
+.statistics-air-quality span {
+    color: var(--text-green);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.68rem;
+}
+
+.statistics-air-quality p {
+    color: var(--text-purple);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.44rem;
 }
 
 .week-weather {
