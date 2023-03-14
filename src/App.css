@@ -29,6 +29,17 @@
     line-height: 1.92rem;
 }
 
+.first-degrees-box-weather {
+    color: white;
+    font-weight: 700;
+}
+
+.second-degrees-box-weather {
+    color: var(--more-light-purple);
+    margin-left: 0.5rem;
+    font-weight: 700;
+}
+
 /* Temperature now section */
 .temperature-now {
     grid-area: temperature;
@@ -86,15 +97,10 @@
     color: var(--text-purple);
 }
 
-.title-temperature ~ span {
+.temperature-now .first-degrees-box-weather,
+.temperature-now .second-degrees-box-weather {
     font-size: 2rem;
-    font-weight: 700;
     line-height: 2.4rem;
-}
-
-.second-degrees-temperature-now {
-    color: var(--more-light-purple);
-    margin-left: 0.5rem;
 }
 
 .statistics-temperature-now {
@@ -183,6 +189,30 @@
     line-height: 1.44rem;
 }
 
+/* Week weather section */
 .week-weather {
+    padding: 4rem;
     grid-area: week;
+
+    align-items: center;
+    gap: 3.8rem;
+}
+
+.day-week-weather {
+    display: grid;
+    justify-items: center;
+    gap: 1.6rem;
+    /* padding: 0 1.3rem; */
+}
+
+.title-day-week-weather {
+    color: var(--text-purple);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.68rem;
+}
+
+.week-weather img {
+    width: 6.4rem;
+    height: 6.4rem;
 }

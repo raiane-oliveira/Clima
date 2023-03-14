@@ -53,8 +53,10 @@ function DayWeekWeather({ day, img, imgAlt, firstDegrees, secondDegrees }) {
             <h3 className="title-day-week-weather">{day}</h3>
             <img src={img} alt={imgAlt} />
             <div className="degrees-day-week-weather">
-                <span className="first-degrees-day-week">{firstDegrees}°</span>
-                <span className="second-degrees-day-week">
+                <span className="first-degrees-box-weather">
+                    {firstDegrees}°
+                </span>
+                <span className="second-degrees-box-weather">
                     {secondDegrees}°
                 </span>
             </div>

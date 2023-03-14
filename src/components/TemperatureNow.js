@@ -17,8 +17,8 @@ export default function TemperatureNow() {
                     18
                     <span className="degrees-title-temperature"> °C</span>
                 </h1>
-                <span>22°</span>
-                <span className="second-degrees-temperature-now">16°</span>
+                <span className="first-degrees-box-weather">22°</span>
+                <span className="second-degrees-box-weather">16°</span>
             </section>
 
             <section className="statistics-temperature-now flex">
