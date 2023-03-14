@@ -2,7 +2,7 @@ import React from "react";
 import location from "../assets/location.svg";
 import wind from "../assets/wind.svg";
 import humidity from "../assets/humidity.svg";
-import cloudsWithRain from "../assets/cloudsWithRain.svg";
+import cloudsPurple from "../assets/cloudsPurple.svg";
 
 export default function TemperatureNow() {
     return (
@@ -21,36 +21,42 @@ export default function TemperatureNow() {
                 <span className="second-degrees-temperature-now">16°</span>
             </section>
 
-            <section className="statistics-temperature-now">
+            <section className="statistics-temperature-now flex">
                 <StatisticTemperatureNow
                     img={wind}
                     imgAlt="Ilustração vento"
                     title="Vento"
-                    data="17 km/h"
+                    number={17}
+                    symbol="km/h"
                 />
                 <StatisticTemperatureNow
                     img={humidity}
                     imgAlt="Ilustração umidade"
                     title="Umidade"
-                    data="31%"
+                    number={31}
+                    symbol="%"
                 />
                 <StatisticTemperatureNow
-                    img={cloudsWithRain}
+                    img={cloudsPurple}
                     imgAlt="Ilustração Chuva"
                     title="Chuva"
-                    data="10%"
+                    number={10}
+                    symbol="%"
                 />
             </section>
         </article>
     );
 }
 
-function StatisticTemperatureNow({ img, imgAlt, title, data }) {
+function StatisticTemperatureNow({ img, imgAlt, title, number, symbol }) {
     return (
         <div className="box-statistics">
             <img src={img} alt={imgAlt} />
             <p className="title-box-statistics">{title}</p>
-            <span className="data-box-statistics">{data}</span>
+            <p className="number-box-statistics">
+                {number}
+                <span className="symbol-box-statistics">{symbol}</span>
+            </p>
         </div>
     );
 }

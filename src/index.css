@@ -24,3 +24,8 @@ body {
     height: 100vh;
     background: url(assets/background-blur.png) no-repeat center / 120% 120%;
 }
+
+/* Utilities classes */
+.flex {
+    display: flex;
+}

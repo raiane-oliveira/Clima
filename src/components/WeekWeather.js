@@ -7,7 +7,7 @@ import cloudsWithSun from "../assets/cloudsWithSun.svg";
 
 export default function WeekWeather() {
     return (
-        <article className="box-weather week-weather">
+        <article className="box-weather week-weather flex">
             <DayWeekWeather
                 day="Amanhã"
                 img={clouds}

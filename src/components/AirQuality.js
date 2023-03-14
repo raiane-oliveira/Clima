@@ -14,7 +14,7 @@ export default function AirQuality() {
                 <h3 className="quality-number-air-quality">21</h3>
             </section>
 
-            <section className="statistics-air-quality">
+            <section className="statistics-air-quality flex">
                 <StatisticAirQuality number={12.9} title="PM2.5" />
                 <StatisticAirQuality number={12.9} title="PM10" />
                 <StatisticAirQuality number={2.1} title="SO²" />

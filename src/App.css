@@ -1,6 +1,6 @@
 .App {
     display: grid;
-    grid-template-columns: 2.7fr 1fr 1fr;
+    grid-template-columns: 48rem repeat(2, 27.7rem);
     grid-template-rows: 24.4rem 21.2rem;
     grid-template-areas:
         "temperature air sunTime"
@@ -18,8 +18,11 @@
 .temperature-now {
     grid-area: temperature;
     display: grid;
-    background: url(./assets/bg-temperature-now.jpg) no-repeat center / 105%
-        105%;
+
+    --top: -0.2rem;
+    background: url(./assets/bg-temperature-now.jpg) no-repeat left var(--top) /
+        130% 102%;
+    position: relative;
 }
 
 .location-temperature-now {
@@ -28,6 +31,19 @@
     align-items: start;
     gap: 0.4rem;
     padding: 1.6rem 1.6rem 0 0;
+}
+
+.location-temperature-now::before {
+    content: "";
+    display: block;
+    width: 17rem;
+    height: 17rem;
+
+    position: absolute;
+    left: -5.6rem;
+    top: -5.6rem;
+
+    background: url(assets/clouds.svg) no-repeat center;
 }
 
 .location-temperature-now p {
@@ -54,6 +70,59 @@
     font-size: 2.4rem;
     line-height: 5.88rem;
     color: var(--text-purple);
+}
+
+.title-temperature ~ span {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+}
+
+.second-degrees-temperature-now {
+    color: var(--more-light-purple);
+    margin-left: 0.5rem;
+}
+
+.statistics-temperature-now {
+    align-items: end;
+    gap: 0.8rem;
+}
+
+.box-statistics {
+    display: grid;
+    grid-template-columns: 3.2rem 5.9rem;
+    align-items: center;
+    column-gap: 1.2rem;
+
+    flex: 1 0 auto;
+
+    background-color: rgba(102, 96, 200, 0.6);
+    border-radius: 0.6rem;
+    padding: 1.2rem 1.6rem;
+}
+
+.box-statistics img {
+    max-width: 100%;
+    grid-row: 1 / 3;
+}
+
+.title-box-statistics {
+    color: var(--light-purple);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+}
+
+.number-box-statistics {
+    color: var(--light-purple);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.symbol-box-statistics {
+    color: var(--text-purple);
+    font-size: 1.4rem;
+    margin-left: 0.4rem;
 }
 
 .week-weather {
