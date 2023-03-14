@@ -1,6 +1,6 @@
 .App {
     display: grid;
-    grid-template-columns: 2.85fr 1fr 1fr;
+    grid-template-columns: 2.7fr 1fr 1fr;
     grid-template-rows: 24.4rem 21.2rem;
     grid-template-areas:
         "temperature air sunTime"
@@ -18,6 +18,8 @@
 .temperature-now {
     grid-area: temperature;
     display: grid;
+    background: url(./assets/bg-temperature-now.jpg) no-repeat center / 105%
+        105%;
 }
 
 .location-temperature-now {
