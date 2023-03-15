@@ -10,19 +10,24 @@ export default function SunTime() {
                 <h2 className="title-box-weather">Horário do sol</h2>
             </section>
             <section className="container-chart-sun-time">
-                <TimeSunSection hour="16:01" />
+                <TimeSunSection
+                    hour="16:01"
+                    className="current-time-sun-time"
+                />
+
                 <ChartSunTime />
+
+                <div className="time-wrapper-sun-time">
+                    <TimeSunSection hour="06:12" className="time-sun-time" />
+                    <TimeSunSection hour="18:52" className="time-sun-time" />
+                </div>
             </section>
-            <div className="time-wrapper-sun-time">
-                <TimeSunSection hour="06:12" />
-                <TimeSunSection hour="18:52" />
-            </div>
         </article>
     );
 }
 
-function TimeSunSection({ hour }) {
-    return <time className="time-sun-time">{hour}</time>;
+function TimeSunSection({ hour, className }) {
+    return <time className={className}>{hour}</time>;
 }
 
 function ChartSunTime({ children }) {
