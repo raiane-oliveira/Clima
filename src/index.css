@@ -19,7 +19,6 @@ body {
     color: white;
 }
 
-/* Makes images responsive */
 img {
     display: block;
     max-width: 100%;
