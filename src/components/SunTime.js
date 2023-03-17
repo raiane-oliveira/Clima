@@ -2,13 +2,17 @@ import React from "react";
 import time from "../assets/time.svg";
 import charSunTime from "../assets/sun-time-chart.svg";
 
+import HeadingBoxWeather from "./HeadingBoxWeather";
+
 export default function SunTime() {
     return (
         <article className="box-weather sun-time">
-            <section className="title-container-box-weather">
-                <img src={time} alt="Ilustração relógio" />
-                <h2 className="title-box-weather">Horário do sol</h2>
-            </section>
+            <HeadingBoxWeather
+                img={time}
+                altImg="Ilustração de um relógio"
+                title="Horário do sol"
+            />
+
             <section className="container-chart-sun-time">
                 <TimeSunSection
                     hour="16:01"
@@ -30,7 +34,7 @@ function TimeSunSection({ hour, className }) {
     return <time className={className}>{hour}</time>;
 }
 
-function ChartSunTime({ children }) {
+function ChartSunTime() {
     return (
         <div className="chart-sun-time-wrapper">
             <div className="chart-sun-time">

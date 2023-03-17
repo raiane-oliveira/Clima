@@ -1,13 +1,16 @@
 import React from "react";
 import leaf from "../assets/leaf.svg";
 
+import HeadingBoxWeather from "./HeadingBoxWeather";
+
 export default function AirQuality() {
     return (
         <article className="box-weather air-quality">
-            <section className="title-container-box-weather">
-                <img src={leaf} alt="Ilustração folha" />
-                <h2 className="title-box-weather">Qualidade do ar</h2>
-            </section>
+            <HeadingBoxWeather
+                img={leaf}
+                altImg="Ilustração de uma folha"
+                title="Qualidade do ar"
+            />
 
             <section className="qualities-container-air-quality">
                 <span className="quality-air-quality">Boa</span>
