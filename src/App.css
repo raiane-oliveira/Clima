@@ -1,374 +1,374 @@
 .App {
-    display: grid;
-    grid-template-columns: 48rem repeat(2, 27.7rem);
-    grid-template-areas:
-        "temperature air sunTime"
-        "temperature week week";
-    gap: 2.4rem 3.2rem;
-    padding: 4rem;
+  display: grid;
+  grid-template-columns: 48rem repeat(2, 27.7rem);
+  grid-template-areas:
+    "temperature air sunTime"
+    "temperature week week";
+  gap: 2.4rem 3.2rem;
+  padding: 4rem;
 }
 
 /* All sections */
 .box-weather {
-    padding: 1.6rem;
-    border-radius: 1rem;
-    background-color: var(--bg-purple);
+  padding: 1.6rem;
+  border-radius: 1rem;
+  background-color: var(--bg-purple);
 }
 
 .title-container-box-weather {
-    display: grid;
-    grid-template-columns: 2.4rem auto;
-    align-items: center;
-    gap: 0.8rem;
-    padding-top: 1.6rem;
+  display: grid;
+  grid-template-columns: 2.4rem auto;
+  align-items: center;
+  gap: 0.8rem;
+  padding-top: 1.6rem;
 }
 
 .title-box-weather {
-    color: var(--text-purple);
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.92rem;
+  color: var(--text-purple);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.92rem;
 }
 
 .first-degrees-box-weather {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .second-degrees-box-weather {
-    color: var(--more-light-purple);
-    margin-left: 0.5rem;
-    font-weight: 700;
+  color: var(--more-light-purple);
+  margin-left: 0.5rem;
+  font-weight: 700;
 }
 
 /* Temperature now section */
 .temperature-now {
-    grid-area: temperature;
-    display: grid;
+  grid-area: temperature;
+  display: grid;
 
-    --top: -0.2rem;
-    background: url(./assets/bg-temperature-now.jpg) no-repeat left var(--top) /
-        130% 102%;
-    position: relative;
+  --top: -0.2rem;
+  background: url(./assets/bg-temperature-now.jpg) no-repeat left var(--top) /
+    130% 102%;
+  position: relative;
 }
 
 .location-temperature-now {
-    justify-self: end;
-    display: flex;
-    align-items: start;
-    gap: 0.4rem;
-    padding: 1.6rem 1.6rem 0 0;
+  justify-self: end;
+  display: flex;
+  align-items: start;
+  gap: 0.4rem;
+  padding: 1.6rem 1.6rem 0 0;
 }
 
 .location-temperature-now::before {
-    content: "";
-    display: block;
-    width: 17rem;
-    height: 17rem;
+  content: "";
+  display: block;
+  width: 17rem;
+  height: 17rem;
 
-    position: absolute;
-    left: -3.6rem;
-    top: -5.6rem;
+  position: absolute;
+  left: -3.6rem;
+  top: -5.6rem;
 
-    background: url(assets/clouds.svg) no-repeat center;
+  background: url(assets/clouds.svg) no-repeat center;
 }
 
 .location-temperature-now p {
-    color: var(--more-light-purple);
-    font-size: 1.4rem;
-    font-weight: 700;
+  color: var(--more-light-purple);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .temperature-temperature-now {
-    justify-self: center;
-    text-align: center;
+  justify-self: center;
+  text-align: center;
 }
 
 .title-temperature {
-    display: flex;
-    font-size: 8.8rem;
-    font-weight: 700;
-    line-height: 10.56rem;
+  display: flex;
+  justify-content: center;
+  font-size: 8.8rem;
+  font-weight: 700;
+  line-height: 10.56rem;
 }
 
 .degrees-title-temperature {
-    font-size: 2.4rem;
-    line-height: 5.88rem;
-    color: var(--text-purple);
+  font-size: 2.4rem;
+  line-height: 5.88rem;
+  color: var(--text-purple);
 }
 
-.temperature-now .first-degrees-box-weather,
-.temperature-now .second-degrees-box-weather {
-    font-size: 2rem;
-    line-height: 2.4rem;
+.temperature-now .first-degrees-box-weather {
+  color: var(--more-light-purple);
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-left: -1rem;
 }
 
 .statistics-temperature-now {
-    flex-wrap: wrap;
-    align-items: end;
-    gap: 0.8rem;
-    margin-top: 2.5rem;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.8rem;
+  margin-top: 2.5rem;
 }
 
 .box-statistics {
-    display: grid;
-    grid-template-columns: 3.2rem 5.9rem;
-    align-items: center;
-    column-gap: 1.2rem;
+  display: grid;
+  grid-template-columns: 3.2rem 5.9rem;
+  align-items: center;
+  column-gap: 1.2rem;
 
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 
-    background-color: rgba(102, 96, 200, 0.6);
-    border-radius: 0.6rem;
-    padding: 1.2rem 1.6rem;
+  background-color: rgba(102, 96, 200, 0.6);
+  border-radius: 0.6rem;
+  padding: 1.2rem 1.6rem;
 }
 
 .box-statistics img {
-    grid-row: 1 / 3;
+  grid-row: 1 / 3;
 }
 
 .title-box-statistics {
-    color: var(--light-purple);
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.4rem;
+  color: var(--light-purple);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
 }
 
 .number-box-statistics {
-    color: var(--light-purple);
-    font-size: 1.8rem;
-    font-weight: 700;
+  color: var(--light-purple);
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .symbol-box-statistics {
-    color: var(--text-purple);
-    font-size: 1.4rem;
-    margin-left: 0.4rem;
+  color: var(--text-purple);
+  font-size: 1.4rem;
+  margin-left: 0.4rem;
 }
 
 /* Air quality section */
 .air-quality {
-    grid-area: air;
+  grid-area: air;
 }
 
 .air-quality,
 .sun-time {
-    display: grid;
-    justify-items: center;
-    gap: 3.2rem;
+  display: grid;
+  justify-items: center;
+  gap: 3.2rem;
 }
 
 .qualities-container-air-quality {
-    text-align: center;
+  text-align: center;
 }
 
 .quality-air-quality {
-    color: var(--text-green);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 2.16rem;
+  color: var(--text-green);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.16rem;
 }
 
 .quality-number-air-quality {
-    margin-top: 0.4rem;
-    font-size: 4.8rem;
-    font-weight: 700;
-    line-height: 4.8rem;
-    color: var(--light-purple);
+  margin-top: 0.4rem;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+  color: var(--light-purple);
 }
 
 .statistics-air-quality {
-    text-align: center;
-    gap: 1.6rem;
+  text-align: center;
+  gap: 1.6rem;
 }
 
 .statistics-air-quality span {
-    color: var(--text-green);
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.68rem;
+  color: var(--text-green);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.68rem;
 }
 
 .statistics-air-quality p {
-    color: var(--text-purple);
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.44rem;
+  color: var(--text-purple);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.44rem;
 }
 
 /* Sun time section */
 .sun-time {
-    grid-area: sunTime;
+  grid-area: sunTime;
 }
 
 .sun-time .title-container-box-weather {
-    margin-bottom: auto;
+  margin-bottom: auto;
 }
 
 .container-chart-sun-time {
-    position: relative;
+  position: relative;
 }
 
 .current-time-sun-time {
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.68rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.68rem;
 
-    position: absolute;
-    top: 42%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Chart sun time section */
 .chart-sun-time-wrapper {
-    height: 11rem;
+  height: 11rem;
 }
 
 .chart-sun-time {
-    --pos-x: 72;
-    position: relative;
-    width: 21.6rem;
-    height: 21.6rem;
+  --pos-x: 72;
+  position: relative;
+  width: 21.6rem;
+  height: 21.6rem;
 }
 
 .chart-sun-time::before {
-    content: "";
-    width: 1.2rem;
-    height: 1.2rem;
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -0.6rem; /* centraliza a bolinha do chart baseado na metade da altura */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.6rem; /* centraliza a bolinha do chart baseado na metade da altura */
 
-    border-radius: 50%;
-    background-color: var(--yellow);
+  border-radius: 50%;
+  background-color: var(--yellow);
 
-    /* Allows use percentage to rotate the chart */
-    --calc-percentage-to-deg: calc(
-        1deg * (((100 - var(--pos-x)) / -100) * 180)
-    );
-    transform: rotate(var(--calc-percentage-to-deg)) translate(10.6rem);
-    transition: 1s;
+  /* Allows use percentage to rotate the chart */
+  --calc-percentage-to-deg: calc(1deg * (((100 - var(--pos-x)) / -100) * 180));
+  transform: rotate(var(--calc-percentage-to-deg)) translate(10.6rem);
+  transition: 1s;
 }
 
 .chart {
-    height: 10.8rem;
-    overflow: hidden;
+  height: 10.8rem;
+  overflow: hidden;
 }
 
 .chart::before {
-    content: "";
-    width: 21.6rem;
-    height: 21.6rem;
+  content: "";
+  width: 21.6rem;
+  height: 21.6rem;
 
-    display: block;
-    border-radius: 50%;
-    background: linear-gradient(
-        180deg,
-        rgba(251, 219, 96, 0.2) 0%,
-        rgba(251, 219, 96, 0) 101.89%
-    );
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 96, 0.2) 0%,
+    rgba(251, 219, 96, 0) 101.89%
+  );
 
-    --mask: linear-gradient(0deg, white 50%, transparent 0%);
-    mask: var(--mask);
-    -webkit-mask: var(--mask);
+  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
 
-    rotate: calc(1.8deg * var(--pos-x));
+  rotate: calc(1.8deg * var(--pos-x));
 
-    transition: 1s;
+  transition: 1s;
 }
 
 .chart img {
-    position: absolute;
-    top: 0;
-    left: -1%;
+  position: absolute;
+  top: 0;
+  left: -1%;
 }
 
 .time-wrapper-sun-time {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.8rem -1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem -1.5rem;
 }
 
 .time-sun-time {
-    font-weight: 400;
-    font-size: 1.28rem;
-    line-height: 1.44rem;
+  font-weight: 400;
+  font-size: 1.28rem;
+  line-height: 1.44rem;
 }
 
 /* Week weather section */
 .week-weather {
-    padding: 4rem;
-    grid-area: week;
+  padding: 4rem;
+  grid-area: week;
 
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 3.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3.8rem;
 }
 
 .day-week-weather {
-    flex: 1 0 auto;
-    display: grid;
-    justify-items: center;
-    gap: 1.6rem;
+  flex: 1 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 1.6rem;
 }
 
 .title-day-week-weather {
-    color: var(--text-purple);
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 1.68rem;
+  color: var(--text-purple);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.68rem;
 }
 
 .week-weather img {
-    width: 6.4rem;
-    height: 6.4rem;
+  width: 6.4rem;
+  height: 6.4rem;
 }
 
 /* Media Queries */
 @media (max-width: 1180px) {
-    .App {
-        grid-template-columns: auto;
-        grid-template-rows: max-content;
-        grid-template-areas:
-            "temperature temperature"
-            "air  sunTime"
-            "week week";
-    }
+  .App {
+    grid-template-columns: auto;
+    grid-template-rows: max-content;
+    grid-template-areas:
+      "temperature temperature"
+      "air  sunTime"
+      "week week";
+  }
 }
 
 @media (max-width: 665px) {
-    #root {
-        place-content: initial;
-        height: 100%;
-    }
-    .App {
-        padding: 3rem 2.5rem;
-        grid-template-areas:
-            "temperature"
-            "air"
-            "sunTime"
-            "week";
-    }
-    .title-temperature {
-        font-size: 6.6rem;
-    }
+  #root {
+    place-content: initial;
+    height: 100%;
+  }
+  .App {
+    padding: 3rem 2.5rem;
+    grid-template-areas:
+      "temperature"
+      "air"
+      "sunTime"
+      "week";
+  }
+  .title-temperature {
+    font-size: 6.6rem;
+  }
 
-    .degrees-title-temperature {
-        font-size: 1.4rem;
-    }
+  .degrees-title-temperature {
+    font-size: 1.4rem;
+  }
 
-    .location-temperature-now::before {
-        content: "";
-        display: block;
-        width: 14rem;
-        height: 14rem;
+  .location-temperature-now::before {
+    content: "";
+    display: block;
+    width: 14rem;
+    height: 14rem;
 
-        position: absolute;
-        left: -2.6rem;
-        top: -4.6rem;
+    position: absolute;
+    left: -2.6rem;
+    top: -4.6rem;
 
-        background: url(assets/clouds.svg) no-repeat center / cover;
-    }
+    background: url(assets/clouds.svg) no-repeat center / cover;
+  }
 }
