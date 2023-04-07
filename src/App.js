@@ -5,14 +5,14 @@ import SunTime from "./components/SunTime";
 import WeekWeather from "./components/WeekWeather";
 
 function App() {
-    return (
-        <main className="App">
-            <TemperatureNow />
-            <AirQuality />
-            <SunTime />
-            <WeekWeather />
-        </main>
-    );
+  return (
+    <main className="App">
+      <TemperatureNow />
+      <AirQuality />
+      <SunTime />
+      <WeekWeather />
+    </main>
+  );
 }
 
 export default App;
