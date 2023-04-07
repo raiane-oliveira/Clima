@@ -6,13 +6,13 @@ import cloudsPurple from "../assets/cloudsPurple.svg";
 
 export default function TemperatureNow(props) {
   const { cityName, countryName, temp, weather, windSpeed, clouds } = props;
-  console.log(props);
   return (
     <article className="box-weather temperature-now">
       <section className="location-temperature-now">
         <img src={location} alt="Location figure" />
         <p>
-          {cityName + "," ?? "Não localizado"} {countryName.country ?? ""}
+          {cityName + "," ?? "Não localizado"}{" "}
+          {countryName ? countryName.country : ""}
         </p>
       </section>
 
@@ -34,21 +34,21 @@ export default function TemperatureNow(props) {
           img={wind}
           imgAlt="Ilustração vento"
           title="Vento"
-          number={windSpeed.speed}
+          number={windSpeed && windSpeed.speed}
           symbol="m/s"
         />
         <StatisticTemperatureNow
           img={humidity}
           imgAlt="Ilustração umidade"
           title="Umidade"
-          number={temp.humidity}
+          number={temp && temp.humidity}
           symbol="%"
         />
         <StatisticTemperatureNow
           img={cloudsPurple}
           imgAlt="Ilustração Chuva"
           title="Nebulosidade"
-          number={clouds.all}
+          number={clouds && clouds.all}
           symbol="%"
         />
       </section>

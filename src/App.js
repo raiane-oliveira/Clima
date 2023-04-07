@@ -9,13 +9,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [weather, setWeather] = useState({});
+  const [weather, setWeather] = useState();
 
   async function getWeather() {
-    const response = await axios
-      .get(`${API_URL}&q=Campina%20Grande`)
-      .then((result) => result.data);
-    setWeather(response);
+    try {
+      const response = await axios
+        .get(`${API_URL}&q=Campina%20Grande`)
+        .then((result) => result.data);
+      setWeather(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
