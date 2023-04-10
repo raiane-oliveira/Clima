@@ -6,19 +6,21 @@ import cloudsPurple from "../assets/cloudsPurple.svg";
 
 export default function TemperatureNow(props) {
   const { cityName, countryName, temp, weather, windSpeed, clouds } = props;
+
   return (
     <article className="box-weather temperature-now">
       <section className="location-temperature-now">
         <img src={location} alt="Location figure" />
         <p>
-          {cityName + "," ?? "Não localizado"}{" "}
+          {cityName ?? "Ative a sua localização"}
+          {cityName && ", "}
           {countryName ? countryName.country : ""}
         </p>
       </section>
 
       <section className="temperature-temperature-now">
         <h1 className="title-temperature">
-          {temp ? Math.round(temp.temp) : ""}
+          {temp ? Math.round(temp.temp) : 0}
           <span className="degrees-title-temperature"> °C</span>
         </h1>
         <span className="first-degrees-box-weather">

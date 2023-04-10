@@ -10,11 +10,22 @@ import axios from "axios";
 
 function App() {
   const [weather, setWeather] = useState();
+  const [coords, setCoords] = useState();
+
+  navigator.geolocation.getCurrentPosition((position) =>
+    setCoords(position.coords)
+  );
 
   async function getWeather() {
     try {
       const response = await axios
-        .get(`${API_URL}&q=Campina%20Grande`)
+        .get(
+          `${API_URL}&${
+            !coords
+              ? "q=Campina%20Grande"
+              : `lat=${coords.latitude}&lon=${coords.longitude}`
+          }`
+        )
         .then((result) => result.data);
       setWeather(response);
     } catch (error) {
@@ -24,7 +35,7 @@ function App() {
 
   useEffect(() => {
     getWeather();
-  }, []);
+  });
 
   return (
     <main className="App">
