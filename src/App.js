@@ -5,8 +5,8 @@ import SunTime from "./components/SunTime";
 import WeekWeather from "./components/WeekWeather";
 
 import { API_URL } from "./api";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [weather, setWeather] = useState();
@@ -18,15 +18,13 @@ function App() {
         .then((result) => result.data);
       setWeather(response);
     } catch (error) {
-      console.log(error);
+      return <h1>Error: {error.message}</h1>;
     }
   }
 
   useEffect(() => {
     getWeather();
   }, []);
-
-  console.log(weather);
 
   return (
     <main className="App">

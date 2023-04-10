@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import location from "../assets/location.svg";
 import wind from "../assets/wind.svg";
 import humidity from "../assets/humidity.svg";
@@ -18,7 +18,7 @@ export default function TemperatureNow(props) {
 
       <section className="temperature-temperature-now">
         <h1 className="title-temperature">
-          {temp && Math.round(temp.temp)}
+          {temp ? Math.round(temp.temp) : ""}
           <span className="degrees-title-temperature"> °C</span>
         </h1>
         <span className="first-degrees-box-weather">
