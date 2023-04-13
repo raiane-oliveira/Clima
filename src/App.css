@@ -77,12 +77,12 @@
   .location-temperature-now::before {
     content: "";
     display: block;
-    width: 14rem;
-    height: 14rem;
+    width: 12rem;
+    height: 12rem;
 
     position: absolute;
     left: -2.6rem;
-    top: -4.6rem;
+    top: -6rem;
 
     background: url(assets/clouds.svg) no-repeat center / cover;
   }
