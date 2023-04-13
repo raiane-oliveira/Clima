@@ -5,7 +5,41 @@ import "./SunTime.css";
 
 import HeadingBoxWeather from "./HeadingBoxWeather";
 
-export default function SunTime() {
+const CONVERT_TO_MILLISECONDS = 1000;
+
+export default function SunTime({ sunrise, sunset }) {
+  const sunriseHour = new Date(
+    sunrise * CONVERT_TO_MILLISECONDS
+  ).toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  const sunsetHour = new Date(
+    sunset * CONVERT_TO_MILLISECONDS
+  ).toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  const currentHour = new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  const totalSunDuration = (sunset - sunrise) * CONVERT_TO_MILLISECONDS;
+
+  // Math.min garante that Date.now() always be lower than sunset
+  const visibleDurationOfSun =
+    Math.min(Date.now(), sunset * CONVERT_TO_MILLISECONDS) -
+    sunrise * CONVERT_TO_MILLISECONDS;
+
+  const visiblePercentageOfSun =
+    (visibleDurationOfSun / totalSunDuration) * 100;
+
   return (
     <article className="box-weather sun-time">
       <HeadingBoxWeather
@@ -15,13 +49,13 @@ export default function SunTime() {
       />
 
       <section className="container-chart-sun-time">
-        <TimeSunSection hour="16:01" className="current-time-sun-time" />
+        <TimeSunSection hour={currentHour} className="current-time-sun-time" />
 
-        <ChartSunTime />
+        <ChartSunTime sunTimePercentage={visiblePercentageOfSun} />
 
         <div className="time-wrapper-sun-time">
-          <TimeSunSection hour="06:12" className="time-sun-time" />
-          <TimeSunSection hour="18:52" className="time-sun-time" />
+          <TimeSunSection hour={sunriseHour} className="time-sun-time" />
+          <TimeSunSection hour={sunsetHour} className="time-sun-time" />
         </div>
       </section>
     </article>
@@ -32,10 +66,10 @@ function TimeSunSection({ hour, className }) {
   return <time className={className}>{hour}</time>;
 }
 
-function ChartSunTime() {
+function ChartSunTime({ sunTimePercentage }) {
   return (
     <div className="chart-sun-time-wrapper">
-      <div className="chart-sun-time">
+      <div className="chart-sun-time" style={{ "--pos-x": sunTimePercentage }}>
         <div className="chart">
           <img
             src={charSunTime}
