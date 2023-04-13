@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import location from "../assets/location.svg";
 import wind from "../assets/wind.svg";
 import humidity from "../assets/humidity.svg";
 import cloudsPurple from "../assets/cloudsPurple.svg";
 
+import "./TemperatureNow.css";
+
 export default function TemperatureNow(props) {
-  const { cityName, countryName, temp, weather, windSpeed, clouds } = props;
+  const {
+    cityName,
+    countryName,
+    temp,
+    weather,
+    windSpeed,
+    clouds,
+    onSearchCity,
+  } = props;
+
+  const [city, setCity] = useState(cityName);
 
   return (
     <article className="box-weather temperature-now">
       <section className="location-temperature-now">
-        <img src={location} alt="Location figure" />
-        <p>
-          {cityName ?? "Ative a sua localização"}
-          {cityName && ", "}
-          {countryName ? countryName.country : ""}
-        </p>
+        <label htmlFor="search">
+          <img src={location} alt="Location figure" />
+        </label>
+        <input
+          id="search"
+          onKeyDown={onSearchCity}
+          type="text"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          title="Digite aqui uma cidade"
+        />
+        <span>{countryName.country}</span>
       </section>
 
       <section className="temperature-temperature-now">

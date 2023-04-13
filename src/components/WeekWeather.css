@@ -1,0 +1,28 @@
+/* Week weather section */
+.week-weather {
+  padding: 4rem;
+  grid-area: week;
+
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3.8rem;
+}
+
+.day-week-weather {
+  flex: 1 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 1.6rem;
+}
+
+.title-day-week-weather {
+  color: var(--text-purple);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.68rem;
+}
+
+.week-weather img {
+  width: 6.4rem;
+  height: 6.4rem;
+}

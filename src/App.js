@@ -11,45 +11,59 @@ import axios from "axios";
 function App() {
   const [weather, setWeather] = useState();
   const [coords, setCoords] = useState();
+  const [cityName, setCityName] = useState();
 
-  navigator.geolocation.getCurrentPosition((position) =>
-    setCoords(position.coords)
-  );
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) =>
+      setCoords(position.coords)
+    );
+  }, []);
 
-  async function getWeather() {
-    try {
-      const response = await axios
-        .get(
-          `${API_URL}&${
-            !coords
-              ? "q=Campina%20Grande"
-              : `lat=${coords.latitude}&lon=${coords.longitude}`
-          }`
-        )
-        .then((result) => result.data);
-      setWeather(response);
-    } catch (error) {
-      return <h1>Error: {error.message}</h1>;
+  useEffect(() => {
+    getWeatherData();
+  }, [coords, cityName]);
+
+  function getWeatherData() {
+    let query = "";
+    if (!coords && !cityName) {
+      query = "q=Campina%20Grande";
+    } else if (coords && !cityName) {
+      query = `lat=${coords.latitude}&lon=${coords.longitude}`;
+    } else if (cityName) {
+      query = `q=${cityName.replace(" ", "%20")}`;
+    }
+
+    axios.get(`${API_URL}&${query}`).then((result) => {
+      setWeather(result.data);
+      setCityName(result.data.name);
+    });
+  }
+
+  function searchCity(e) {
+    if (e.key === "Enter") {
+      setCityName(e.target.value);
     }
   }
 
-  useEffect(() => {
-    getWeather();
-  });
-
-  return (
+  return weather ? (
     <main className="App">
       <TemperatureNow
-        cityName={weather && weather.name}
-        countryName={weather && weather.sys}
-        windSpeed={weather && weather.wind}
-        temp={weather && weather.main}
-        weather={weather && weather.weather[0]}
-        clouds={weather && weather.clouds}
+        onSearchCity={searchCity}
+        cityName={cityName}
+        setCityName={setCityName}
+        countryName={weather.sys}
+        windSpeed={weather.wind}
+        temp={weather.main}
+        weather={weather.weather[0]}
+        clouds={weather.clouds}
       />
       <AirQuality />
-      <SunTime />
+      <SunTime sunrise={weather.sys.sunrise} sunset={weather.sys.sunset} />
       <WeekWeather />
+    </main>
+  ) : (
+    <main className="App">
+      <h1>Carregando...</h1>
     </main>
   );
 }

@@ -1,0 +1,49 @@
+/* Air quality section */
+.air-quality {
+  grid-area: air;
+}
+
+.air-quality,
+.sun-time {
+  display: grid;
+  justify-items: center;
+  gap: 3.2rem;
+}
+
+.qualities-container-air-quality {
+  text-align: center;
+}
+
+.quality-air-quality {
+  color: var(--text-green);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.16rem;
+}
+
+.quality-number-air-quality {
+  margin-top: 0.4rem;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+  color: var(--light-purple);
+}
+
+.statistics-air-quality {
+  text-align: center;
+  gap: 1.6rem;
+}
+
+.statistics-air-quality span {
+  color: var(--text-green);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.68rem;
+}
+
+.statistics-air-quality p {
+  color: var(--text-purple);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.44rem;
+}

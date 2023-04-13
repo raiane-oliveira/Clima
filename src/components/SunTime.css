@@ -1,0 +1,98 @@
+.sun-time {
+  grid-area: sunTime;
+}
+
+.sun-time .title-container-box-weather {
+  margin-bottom: auto;
+}
+
+.container-chart-sun-time {
+  position: relative;
+}
+
+.current-time-sun-time {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.68rem;
+
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Chart sun time section */
+.chart-sun-time-wrapper {
+  height: 11rem;
+}
+
+.chart-sun-time {
+  --pos-x: 72;
+  position: relative;
+  width: 21.6rem;
+  height: 21.6rem;
+}
+
+.chart-sun-time::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.6rem; /* centraliza a bolinha do chart baseado na metade da altura */
+
+  border-radius: 50%;
+  background-color: var(--yellow);
+
+  /* Allows use percentage to rotate the chart */
+  --calc-percentage-to-deg: calc(1deg * (((100 - var(--pos-x)) / -100) * 180));
+  transform: rotate(var(--calc-percentage-to-deg)) translate(10.6rem);
+  transition: 1s;
+}
+
+.chart {
+  height: 10.8rem;
+  overflow: hidden;
+}
+
+.chart::before {
+  content: "";
+  width: 21.6rem;
+  height: 21.6rem;
+
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 96, 0.2) 0%,
+    rgba(251, 219, 96, 0) 101.89%
+  );
+
+  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+
+  rotate: calc(1.8deg * var(--pos-x));
+
+  transition: 1s;
+}
+
+.chart img {
+  position: absolute;
+  top: 0;
+  left: -1%;
+}
+
+.time-wrapper-sun-time {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8rem -1.5rem;
+}
+
+.time-sun-time {
+  font-weight: 400;
+  font-size: 1.28rem;
+  line-height: 1.44rem;
+}
